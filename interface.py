@@ -4,6 +4,8 @@ from selection import selection_sort
 from quick import quick_sort,quick_sort_recursion,quick_sort_algorithm,partition
 from merge import merge_sort
 from insertion import insertion_sort
+from timer import run_sorting_algorithm
+from random import randint
 
 # creating an empty list
 arr = []
@@ -25,16 +27,20 @@ if picker(choice) == 'none':
     sys.exit()
 
 
-# number of elemetns as input
+# number of elements as input
 n = int(input("Length of the array : "))
 print("Type the number and then hit enter to begin typing the next element in the arrau until complete")
 
 # iterating till the range
-for i in range(0, n):
-    ele = int(input())
+arr = [randint(0, 1000) for i in range(n)]
 
-    arr.append(ele) # adding the element
+# for i in range(0, n):
+    # ele = int(input())
 
-print("You entered: ",arr)
+    # arr.append(ele) # adding the element
+
+# print("You entered: ",arr)
 print("Sorted Array: ",picker(choice))
+
+run_sorting_algorithm(algorithm="sorted", array=arr)
 
